@@ -1,168 +1,226 @@
-.page {
-  --gray-rgb: 0, 0, 0;
-  --gray-alpha-200: rgba(var(--gray-rgb), 0.08);
-  --gray-alpha-100: rgba(var(--gray-rgb), 0.05);
+/* Remove default margins/padding and ensure full height */
 
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
 
-  display: grid;
-  grid-template-rows: 20px 1fr 20px;
-  align-items: center;
-  justify-items: center;
-  min-height: 100svh;
-  padding: 80px;
-  gap: 64px;
-  font-family: var(--font-geist-sans);
-}
+/* Main container styling – apply this class to your top-level container (or <body>) */
+.body {
+  background-color: #f8f8f8; /* Off-white background */
+  background-image: url('https://www.transparenttextures.com/patterns/leaves.png'); /* Alternative green leaves texture */
+  background-repeat: repeat; /* Ensure the pattern repeats */
+  background-size: auto; /* Use auto size to maintain texture clarity */
+  background-position: center;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 
-@media (prefers-color-scheme: dark) {
-  .page {
-    --gray-rgb: 255, 255, 255;
-    --gray-alpha-200: rgba(var(--gray-rgb), 0.145);
-    --gray-alpha-100: rgba(var(--gray-rgb), 0.06);
-
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
-  }
-}
-
-.main {
+  /* Center all child elements vertically and horizontally */
   display: flex;
   flex-direction: column;
-  gap: 32px;
-  grid-row-start: 2;
-}
-
-.main ol {
-  font-family: var(--font-geist-mono);
-  padding-left: 0;
-  margin: 0;
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-  list-style-position: inside;
-}
-
-.main li:not(:last-of-type) {
-  margin-bottom: 8px;
-}
-
-.main code {
-  font-family: inherit;
-  background: var(--gray-alpha-100);
-  padding: 2px 4px;
-  border-radius: 4px;
-  font-weight: 600;
-}
-
-.ctas {
-  display: flex;
-  gap: 16px;
-}
-
-.ctas a {
-  appearance: none;
-  border-radius: 128px;
-  height: 48px;
-  padding: 0 20px;
-  border: none;
-  border: 1px solid transparent;
-  transition:
-    background 0.2s,
-    color 0.2s,
-    border-color 0.2s;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
   justify-content: center;
-  font-size: 16px;
-  line-height: 20px;
-  font-weight: 500;
-}
-
-a.primary {
-  background: var(--foreground);
-  color: var(--background);
-  gap: 8px;
-}
-
-a.secondary {
-  border-color: var(--gray-alpha-200);
-  min-width: 180px;
-}
-
-.footer {
-  grid-row-start: 3;
-  display: flex;
-  gap: 24px;
-}
-
-.footer a {
-  display: flex;
   align-items: center;
-  gap: 8px;
+  min-height: 100vh;
 }
 
-.footer img {
-  flex-shrink: 0;
+/* Typing effect title */
+.typingeffect {
+  font-size: 5.5rem;            /* Increased font size for a title */
+  font-weight: 400;             /* Normal weight, not bold */
+  font-family: 'EB Garamond', serif;
+  color: #000;
+  white-space: nowrap;          /* Keeps text on one line */
+  overflow: hidden;             /* Hide overflowing text */
+  border-right: 3px solid rgba(0, 0, 0, 0.8); /* Typing cursor effect */
+  animation: typing 5s cubic-bezier(0.4, 0, 0.2, 1), 
+             fade-caret 1s infinite ease-in-out;
+  
+  display: block;               /* Makes element block-level */
+  margin: 1rem auto 0;          /* Adds buffer from the top and centers horizontally */
+  text-align: center;           /* Centers the text inside the element */
+}
+.quotetitle {
+  font-size: 2.5rem;            /* Increased font size for a title */
+  font-weight: 400;             /* Normal weight, not bold */
+  font-family: 'EB Garamond', serif;
+  display: block;               /* Makes element block-level */
+          /* Adds buffer from the top and centers horizontally */
+  text-align: center;           /* Centers the text inside the element */
+  margin-bottom: 4rem; /* Adds space below the title */
+  animation: fadeInUp 0.6s ease-out forwards;
 }
 
-/* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-  a.primary:hover {
-    background: var(--button-primary-hover);
-    border-color: transparent;
+/* Typing animation */
+@keyframes typing {
+  from {
+    width: 0; /* Start with no text visible */
   }
-
-  a.secondary:hover {
-    background: var(--button-secondary-hover);
-    border-color: transparent;
-  }
-
-  .footer a:hover {
-    text-decoration: underline;
-    text-underline-offset: 4px;
-  }
-}
-
-@media (max-width: 600px) {
-  .page {
-    padding: 32px;
-    padding-bottom: 80px;
-  }
-
-  .main {
-    align-items: center;
-  }
-
-  .main ol {
-    text-align: center;
-  }
-
-  .ctas {
-    flex-direction: column;
-  }
-
-  .ctas a {
-    font-size: 14px;
-    height: 40px;
-    padding: 0 16px;
-  }
-
-  a.secondary {
-    min-width: auto;
-  }
-
-  .footer {
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
+  to {
+    width: 100%; /* Reveal the full text */
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  .logo {
-    filter: invert();
+/* Smooth fading cursor animation */
+@keyframes fade-caret {
+  0%, 100% {
+    border-color: rgba(0, 0, 0, 0.8);
+  }
+  50% {
+    border-color: rgba(0, 0, 0, 0.2); /* Cursor fades out */
   }
 }
+
+/* Slide effect for titles or other elements */
+.slide {
+  font-size: 2.5rem;            /* Increased font size for a title */
+  font-weight: 400;             /* Normal weight, not bold */
+  font-family: 'EB Garamond', serif;
+  display: block;               /* Makes element block-level */
+  margin: 3rem auto 0;          /* Adds buffer from the top and centers horizontally */
+  text-align: center;           /* Centers the text inside the element */
+  opacity: 0;                   /* Initially hidden for fade-in effect */
+  transform: translateY(10px);  /* Slight downward offset for fade-in effect */
+  animation: fadeIn 6s ease-out forwards; /* Fade in effect */
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation for falling elements (e.g., petals) */
+@keyframes fall {
+  0% {
+    transform: translateY(-10vh) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Books container – centered with flex */
+.booksContainer {
+  margin: 23rem auto;        
+  width: 80%;               
+  text-align: center;       
+  
+  opacity: 0; /* Initially hidden */
+  transform: translateY(10px); /* Slight upward motion */
+  animation: fadeIn 1.2s ease-out forwards;
+  
+  display: flex;
+  flex-direction: column; /* Ensures content remains centered */
+  align-items: center;    /* Keeps everything centered */
+}
+
+/* Horizontal bar for books */
+.booksBar {
+  display: flex;
+  flex-direction: row;
+  gap: 15rem; /* Increased gap for more spacing between books */
+  justify-content: center;
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+  overflow-y: hidden; /* Hide vertical scrollbar */
+  max-width: 100%;    /* Ensure it doesn’t exceed container width */
+}
+
+/* Individual book styling with fade-in effect */
+.book {
+  font-size: normal;
+  font-weight: lighter;
+  font-family: 'EB Garamond', serif;
+  flex: 0 0 auto;
+  width: 150px;
+  text-align: center;
+  
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeIn 4s ease-out forwards; /* Fade in effect */
+  animation-delay: 1s; /* Delayed for a smoother effect */
+}
+
+/* Petal falling effect */
+.petal {
+  position: fixed;
+  top: -10vh;
+  left: calc(100vw * var(--random-x));
+  width: 20px;
+  height: 20px;
+  background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Prunus_serrulata_%27Kanzan%27_1.jpg/240px-Prunus_serrulata_%27Kanzan%27_1.jpg') no-repeat center;
+  background-size: contain;
+  opacity: 0;
+  animation: fall 10s linear infinite;
+}
+
+/* Book image styling */
+.book img {
+  width: 300x;  /* Set a fixed width */
+  height: 250px; /* Set a fixed height to maintain consistency */
+  object-fit: cover; /* Ensures the image fills the area without distortion */
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* Keyframes for fade in from below */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Quote container – centers quotes on the page */
+.quoteContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Each individual quote block */
+.quote {
+  text-align: center;
+  margin: 3rem auto 0;
+  margin: 40px 0;
+  max-width: 600px; /* Limits the width for better readability */
+  
+  /* Apply the fade-in animation */
+  opacity: 0; /* Start hidden */
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* The quote text is slightly bolder */
+.quote p {
+  font-weight: 600;
+  margin-bottom: 10px;
+  font-size: 1.1em;
+}
+
+/* Author and book information with a lighter font weight */
+.quote h3,
+.quote h4 {
+  font-weight: 400;
+  margin: 5px 0;
+}
+
+/* Optional: Stagger the fade-in effect for each quote */
+.quote:nth-child(1) {
+  animation-delay: 2.4s;
+}
+.quote:nth-child(2) {
+  animation-delay: 2.4s;
+}
+.quote:nth-child(3) {
+  animation-delay: 2.4s;
+}
+/* Add more nth-child selectors as needed */
+
+
