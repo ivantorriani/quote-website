@@ -24,7 +24,7 @@ export default function Page() {
         Happy {currentDate} !
       </h1>
       <h4 className={styles.slide}>
-        Check out what I'm reading currently:
+        Check out what Im reading currently:
       </h4>
 
       <div className={styles.booksContainer}>
