@@ -2,6 +2,7 @@ import styles from './page.module.css';
 import BookSchema from './database/bookschema';
 import QuoteSchema from './database/quoteschema';
 import Image from 'next/image';
+import Link from 'next/link';
 import { format } from "date-fns";
 
 console.log(format(new Date(), "yyyy-MM-dd HH:mm:ss")); // 2025-02-14 12:34:56
@@ -51,6 +52,13 @@ export default function Page() {
             <h4>{quote.book}</h4>
           </div>
         ))}
+      </div>
+
+      <div className = {styles.slide2}>
+        <p>Interested in more quotes? Check out </p> <Link href="/quote-archive"> the quote archive </Link> 
+      </div>
+      <div className = {styles.slide2}>
+        <p> Interested in more books? Check out </p> <Link href="/book-archive"> the book archive </Link>
       </div>
       <Image
 

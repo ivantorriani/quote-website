@@ -71,7 +71,17 @@
   font-weight: 400;             /* Normal weight, not bold */
   font-family: 'EB Garamond', serif;
   display: block;               /* Makes element block-level */
-  margin: 3rem auto 0;          /* Adds buffer from the top and centers horizontally */
+  margin: 6rem auto 0;          /* Adds buffer from the top and centers horizontally */
+  text-align: center;           /* Centers the text inside the element */
+  opacity: 0;                   /* Initially hidden for fade-in effect */
+  transform: translateY(10px);  /* Slight downward offset for fade-in effect */
+  animation: fadeIn 6s ease-out forwards; /* Fade in effect */
+}
+.slide2 {
+  font-size: 1rem;            /* Increased font size for a title */
+  font-weight: 400;             /* Normal weight, not bold */
+  font-family: 'EB Garamond', serif;
+  display: block;               /* Makes element block-level */
   text-align: center;           /* Centers the text inside the element */
   opacity: 0;                   /* Initially hidden for fade-in effect */
   transform: translateY(10px);  /* Slight downward offset for fade-in effect */
@@ -179,6 +189,7 @@
 
 /* Quote container – centers quotes on the page */
 .quoteContainer {
+  margin-top: 4em;
   display: flex;
   flex-direction: column;
   align-items: center;
