@@ -1,5 +1,5 @@
 const QuoteSchema = [
-    { "quote": "...But because they deal with something that will not return, the bloody years of the revolution have turned into mere words, theories, and discussions, have become lighter than feathers, frightening no one.", 
+    { "quote": " ...But because they deal with something that will not return, the bloody years of the revolution have turned into mere words, theories, and discussions, have become lighter than feathers, frightening no one.", 
       "author": "Milan Kundera", 
       "book": "The Unbearable Lightness of Being" },
     { "quote": "The stars are beautiful because of a flower that cannot be seen", 
