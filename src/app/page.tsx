@@ -41,19 +41,13 @@ export default function Page() {
       </div>
 
       <div className={styles.quotetitle}>
-        <h4> and some of my favorite quotes...</h4>
+        <h4> Here's one quote I liked today: </h4>
       </div>
-
-      <div className='quoteContainer'>
-        {QuoteSchema.map((quote, index) => (
-          <div key={index} className = {styles.quote}>
-            <p>{quote.quote}</p>
-            <h3>{quote.author}</h3>
-            <h4>{quote.book}</h4>
-          </div>
-        ))}
+      <div className = {styles.quoteContainer}>
+          <p className = {styles.quotetheday}> Imagine if each day a man must try to kill the moon, he thought. The moon runs away. But imagine if a man each day should have to try to kill the sun? We were born lucky, he thought</p>
+          <p className = {styles.author}>  Santiago (The Old Man), The Old Man and the Sea, Ernest Hemingway</p>
+          <p className = {styles.description}> Santiago hasn't caught a fish in years. But he remembers that, unlike killing the moon or the sun, his goal to catch a fish is achievable. We should be grateful that most of our problems are within our control.</p>
       </div>
-
       <div className = {styles.slide2}>
         <p>Interested in more quotes? Check out </p> <Link href="/quote-archive"> the quote archive </Link> 
       </div>

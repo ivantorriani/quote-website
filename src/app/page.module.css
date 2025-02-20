@@ -20,29 +20,126 @@
 
 /* Typing effect title */
 .typingeffect {
-  font-size: 5.5rem;            /* Increased font size for a title */
-  font-weight: 400;             /* Normal weight, not bold */
-  font-family: 'EB Garamond', serif;
-  color: #000;
-  white-space: nowrap;          /* Keeps text on one line */
-  overflow: hidden;             /* Hide overflowing text */
-  border-right: 3px solid rgba(0, 0, 0, 0.8); /* Typing cursor effect */
-  animation: typing 5s cubic-bezier(0.4, 0, 0.2, 1), 
-             fade-caret 1s infinite ease-in-out;
+  font-size: 5.5rem;                     /* Preserve your letter size */
+  font-family: 'Dancing Script', cursive; /* Handwritten style */
+  font-weight: 400;
+  color: #C4A484;                        /* A darker pastel blue */
+  text-align: center;
+  margin: 1rem auto 0;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
   
-  display: block;               /* Makes element block-level */
-  margin: 1rem auto 0;          /* Adds buffer from the top and centers horizontally */
-  text-align: center;           /* Centers the text inside the element */
+  /* Start with the text fully clipped (invisible) */
+  clip-path: inset(0 100% 0 0);
+  
+  /* Reveal the text from left to right */
+  animation: revealText 4s forwards ease-in-out;
+}
+
+/* A pseudo-element to simulate the pen tip */
+.typingeffect::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;              /* Pen width */
+  height: 100%;
+  background: #457b9d;
+  animation: penMove 4s forwards ease-in-out;
+}
+
+/* Keyframes to gradually unclip the text */
+@keyframes revealText {
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+/* Keyframes to move the pen across the text, fading out at the end */
+@keyframes penMove {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  90% {
+    transform: translateX(90%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
 }
 .quotetitle {
-  font-size: 2.5rem;            /* Increased font size for a title */
-  font-weight: 400;             /* Normal weight, not bold */
-  font-family: 'EB Garamond', serif;
-  display: block;               /* Makes element block-level */
-          /* Adds buffer from the top and centers horizontally */
-  text-align: center;           /* Centers the text inside the element */
-  margin-bottom: 4rem; /* Adds space below the title */
-  animation: fadeInUp 0.6s ease-out forwards;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 2.5em;
+  font-weight: bold;
+  text-align: center;
+  color: #222;
+  margin: 20px;
+  position: relative;
+  overflow: hidden;
+  /* Fade in and slight slide from above */
+  animation: fadeIn 1.5s ease forwards;
+}
+
+/* Fade-in keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Underline effect using a pseudo-element */
+.quotetitle::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -5px;
+  width: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #f06, #f79);
+  transition: width 0.5s ease, left 0.5s ease;
+}
+
+/* On hover, animate underline and add a subtle glow */
+.quotetitle:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+/* Optional: subtle glowing text effect on hover */
+.quotetitle:hover {
+  animation: glow 1s infinite alternate, fadeIn 1.5s ease forwards;
+}
+
+/* Glow keyframes */
+@keyframes glow {
+  from {
+    text-shadow: 0 0 5px rgba(240, 96, 96, 0.7);
+  }
+  to {
+    text-shadow: 0 0 20px rgba(240, 121, 121, 0.9);
+  }
+}
+
+.description{
+  text-align: center;
+  margin: 40px auto;
+  max-width: 600px;
+  font-size: 1.0rem;
+  color: #666;
+
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: 'Roboto Mono', monospace;
+
 }
 
 /* Typing animation */
@@ -69,7 +166,7 @@
 .slide {
   font-size: 2.5rem;            /* Increased font size for a title */
   font-weight: 400;             /* Normal weight, not bold */
-  font-family: 'EB Garamond', serif;
+  font-family: 'Dancing Script, cursive';
   display: block;               /* Makes element block-level */
   margin: 6rem auto 0;          /* Adds buffer from the top and centers horizontally */
   text-align: center;           /* Centers the text inside the element */
@@ -80,7 +177,7 @@
 .slide2 {
   font-size: 1rem;            /* Increased font size for a title */
   font-weight: 400;             /* Normal weight, not bold */
-  font-family: 'EB Garamond', serif;
+  font-family: 'Dancing Script', cursive;
   display: block;               /* Makes element block-level */
   text-align: center;           /* Centers the text inside the element */
   opacity: 0;                   /* Initially hidden for fade-in effect */
@@ -189,7 +286,8 @@
 
 /* Quote container – centers quotes on the page */
 .quoteContainer {
-  margin-top: 4em;
+  outline: 2px solid #000;
+  margin-top: 0em;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -197,41 +295,74 @@
 }
 
 /* Each individual quote block */
-.quote {
+.quotetheday {
   text-align: center;
-  margin: 3rem auto 0;
-  margin: 40px 0;
-  max-width: 600px; /* Limits the width for better readability */
+  margin: 40px auto;
+  max-width: 600px;
+  font-size: 2.5rem;
+  font-weight: 400;
+  line-height: 1.4;
+  font-family: 'Roboto Mono', monospace;  /* Boxy, monospaced look */
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  position: relative;
+  display: inline-block;
+  opacity: 0;
+  animation: fadeIn 0.6s ease-out forwards;
   
-  /* Apply the fade-in animation */
-  opacity: 0; /* Start hidden */
-  animation: fadeInUp 0.6s ease-out forwards;
+  /* Set up a gradient background that’s clipped to the text */
+  background: linear-gradient(90deg, #333 20%, #fff 50%, #333 80%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  /* Transition for the brightness filter on hover */
+  transition: filter 0.3s ease-in-out;
+}
+
+.quotetheday:hover {
+  filter: brightness(1.2);
+}
+.quotetheday::before {
+  content: "“";
+  margin-right: 0.2em;
+}
+
+.quotetheday::after {
+  content: "”";
+  margin-left: 0.2em;
+}
+
+/* Minimal fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.author {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1.2rem; /* Smaller than .quotetheday */
+  font-family: 'Roboto Mono', monospace; /* Consistent, boxy style */
+  color: #666;
+  letter-spacing: 0.05em;
+  opacity: 0;
+  animation: fadeIn 0.6s ease-out forwards 0.3s; /* Slight delay for a staggered effect */
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.author:hover {
+  transform: translateY(-2px);
+  color: #444;
 }
 
 /* The quote text is slightly bolder */
-.quote p {
-  font-weight: 600;
-  margin-bottom: 10px;
-  font-size: 1.1em;
-}
+
 
 /* Author and book information with a lighter font weight */
-.quote h3,
-.quote h4 {
-  font-weight: 400;
-  margin: 5px 0;
-}
-
-/* Optional: Stagger the fade-in effect for each quote */
-.quote:nth-child(1) {
-  animation-delay: 2.4s;
-}
-.quote:nth-child(2) {
-  animation-delay: 2.4s;
-}
-.quote:nth-child(3) {
-  animation-delay: 2.4s;
-}
-/* Add more nth-child selectors as needed */
 
 
