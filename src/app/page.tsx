@@ -41,7 +41,7 @@ export default function Page() {
       </div>
 
       <div className={styles.quotetitle}>
-        <h4> Here's one quote I liked today: </h4>
+        <h4> One quote I liked today: </h4>
       </div>
       <div className = {styles.quoteContainer}>
           <p className = {styles.quotetheday}> Imagine if each day a man must try to kill the moon, he thought. The moon runs away. But imagine if a man each day should have to try to kill the sun? We were born lucky, he thought</p>
