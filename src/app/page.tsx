@@ -26,11 +26,12 @@ export default function Page() {
       <h1 className={styles.title}>
         Happy {currentDate} !
       </h1>
-      <h4 className={styles.slide}>
-        Check out what Im reading currently:
-      </h4>
+
 
       <div className={styles.booksContainer}>
+      <h4 className={styles.slide}>
+        What I'm currently reading:
+      </h4>
         <div className={styles.booksBar}>
           {BookSchema.map((book, index) => (
             <div key={index} className={styles.book}>

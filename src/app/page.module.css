@@ -117,7 +117,7 @@
 }
 
 .quotetitle {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Roboto Mono', monospace;
   font-size: 2.5em;
   font-weight: bold;
   text-align: center;
@@ -149,7 +149,6 @@
   bottom: -5px;
   width: 0;
   height: 4px;
-  background: linear-gradient(90deg, #f06, #f79);
   transition: width 0.5s ease, left 0.5s ease;
 }
 
@@ -165,14 +164,7 @@
 }
 
 /* Glow keyframes */
-@keyframes glow {
-  from {
-    text-shadow: 0 0 5px rgba(240, 96, 96, 0.7);
-  }
-  to {
-    text-shadow: 0 0 20px rgba(240, 121, 121, 0.9);
-  }
-}
+
 
 .description{
   text-align: center;
@@ -382,12 +374,13 @@
 
 /* Optional title and author text styling within each book */
 .book .title {
-  font-family: 'EB Garamond', serif;
+  font-family: 'Roboto Mono', monospace;
   font-size: 1.1rem;
   margin-bottom: 0.5rem;
   color: #333;
 }
 .book .author {
+  font-family: 'Roboto Mono', monospace;
   font-size: 0.9rem;
   color: #666;
 }
