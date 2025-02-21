@@ -19,44 +19,72 @@
 }
 
 /* Typing effect title */
-.typingeffect {
-  font-size: 5.5rem;                     /* Preserve your letter size */
-  font-family: 'Dancing Script', cursive; /* Handwritten style */
+.title {
+  font-size: 5.5rem;                     
+  font-family: 'Roboto Mono', monospace;  /* Boxy, monospaced look */
+  text-transform: uppercase;
   font-weight: 400;
-  color: #C4A484;                        /* A darker pastel blue */
   text-align: center;
   margin: 1rem auto 0;
   white-space: nowrap;
   overflow: hidden;
   position: relative;
   
-  /* Start with the text fully clipped (invisible) */
-  clip-path: inset(0 100% 0 0);
+  /* Apply a glossy, gradient fill to the text */
+  background: linear-gradient(135deg, #fefefe, black 70%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
   
-  /* Reveal the text from left to right */
+  /* Initially clip the text for the reveal effect */
+  clip-path: inset(0 100% 0 0);
   animation: revealText 4s forwards ease-in-out;
+  
+  /* 3D perspective and slight rotation for depth */
+  transform: perspective(500px) rotateX(5deg);
+  transition: transform 0.5s ease;
+}
+.title:hover {
+  transform: perspective(500px) rotateX(0);
 }
 
-/* A pseudo-element to simulate the pen tip */
-.typingeffect::after {
+/* Pen tip effect simulated with the ::before pseudo-element */
+.title::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
-  width: 3px;              /* Pen width */
+  width: 3px;
   height: 100%;
   background: #457b9d;
   animation: penMove 4s forwards ease-in-out;
 }
 
-/* Keyframes to gradually unclip the text */
+/* Glossy shine effect that sweeps over the text using ::after */
+.title::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent);
+  opacity: 0;
+  transform: translateX(-100%);
+  animation: shine 4s forwards ease-in-out;
+}
+
+/* Keyframes to reveal the text by unclipping it */
 @keyframes revealText {
-  to {
+  0% {
+    clip-path: inset(0 100% 0 0);
+  }
+  100% {
     clip-path: inset(0 0 0 0);
   }
 }
 
-/* Keyframes to move the pen across the text, fading out at the end */
+/* Keyframes to animate the pen tip moving across the text */
 @keyframes penMove {
   0% {
     transform: translateX(0);
@@ -71,6 +99,23 @@
     opacity: 0;
   }
 }
+
+/* Keyframes for the sweeping glossy shine effect */
+@keyframes shine {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
 .quotetitle {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 2.5em;
@@ -161,18 +206,58 @@
     border-color: rgba(0, 0, 0, 0.2); /* Cursor fades out */
   }
 }
+.coverImage {
+  position: relative;
+  display: inline-block;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.coverImage img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+/* Hover: scale up and brighten slightly */
+.coverImage:hover {
+  transform: scale(1.03);
+}
+.coverImage:hover img {
+  filter: brightness(1.1);
+}
+
+/* Glossy shine effect using a pseudo-element */
+.coverImage::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
+  transition: left 0.75s ease;
+}
+
+.coverImage:hover::after {
+  left: 100%;
+}
+
 
 /* Slide effect for titles or other elements */
 .slide {
-  font-size: 2.5rem;            /* Increased font size for a title */
-  font-weight: 400;             /* Normal weight, not bold */
-  font-family: 'Dancing Script, cursive';
-  display: block;               /* Makes element block-level */
-  margin: 6rem auto 0;          /* Adds buffer from the top and centers horizontally */
-  text-align: center;           /* Centers the text inside the element */
-  opacity: 0;                   /* Initially hidden for fade-in effect */
-  transform: translateY(10px);  /* Slight downward offset for fade-in effect */
-  animation: fadeIn 6s ease-out forwards; /* Fade in effect */
+  font-size: 1.5rem;                     
+  font-family: 'Roboto Mono', monospace;  /* Boxy, monospaced look */
+  text-transform: lowercase;
+  font-weight: 400;
+  text-align: center;
+  margin: 1rem auto 0;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
 }
 .slide2 {
   font-size: 1rem;            /* Increased font size for a title */
@@ -210,70 +295,105 @@
 }
 
 /* Books container – centered with flex */
+/* Overall container with gradient background, rounded edges, and a subtle drop shadow */
 .booksContainer {
-  margin: 23rem auto;        
-  width: 80%;               
-  text-align: center;       
-  
-  opacity: 0; /* Initially hidden */
-  transform: translateY(10px); /* Slight upward motion */
-  animation: fadeIn 1.2s ease-out forwards;
-  
+  position: relative;
+  width: 90%;
+  margin: 5rem auto;
+  padding: 2rem;
   display: flex;
-  flex-direction: column; /* Ensures content remains centered */
-  align-items: center;    /* Keeps everything centered */
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(135deg, #f9f9f9, #eaeaea);
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  animation: containerFadeIn 1s ease-out forwards;
 }
 
-/* Horizontal bar for books */
+/* Glossy overlay effect on hover */
+.booksContainer::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+.booksContainer:hover::after {
+  opacity: 1;
+}
+
+/* Horizontal bar for displaying books */
 .booksBar {
   display: flex;
-  flex-direction: row;
-  gap: 15rem; /* Increased gap for more spacing between books */
+  gap: 2rem;
   justify-content: center;
-  overflow-x: hidden; /* Hide horizontal scrollbar */
-  overflow-y: hidden; /* Hide vertical scrollbar */
-  max-width: 100%;    /* Ensure it doesn’t exceed container width */
+  align-items: flex-end;
+  overflow-x: auto;
+  padding: 2rem 0;
+  width: 100%;
 }
 
-/* Individual book styling with fade-in effect */
+/* Styling individual book cards with a 3D appearance and entrance animation */
 .book {
-  font-size: normal;
-  font-weight: lighter;
-  font-family: 'EB Garamond', serif;
-  flex: 0 0 auto;
-  width: 150px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 1rem;
+  width: 160px;
   text-align: center;
-  
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: translateY(20px) rotateX(15deg);
   opacity: 0;
-  transform: translateY(10px);
-  animation: fadeIn 4s ease-out forwards; /* Fade in effect */
-  animation-delay: 1s; /* Delayed for a smoother effect */
+  animation: bookAppear 0.8s ease-out forwards;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Petal falling effect */
-.petal {
-  position: fixed;
-  top: -10vh;
-  left: calc(100vw * var(--random-x));
-  width: 20px;
-  height: 20px;
-  background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Prunus_serrulata_%27Kanzan%27_1.jpg/240px-Prunus_serrulata_%27Kanzan%27_1.jpg') no-repeat center;
-  background-size: contain;
-  opacity: 0;
-  animation: fall 10s linear infinite;
+/* Staggering animation delays for a dynamic appearance */
+.book:nth-child(odd) {
+  animation-delay: 0.2s;
+}
+.book:nth-child(even) {
+  animation-delay: 0.4s;
 }
 
-/* Book image styling */
+/* Hover effect to lift and slightly enlarge the book */
+.book:hover {
+  transform: translateY(0) rotateX(0) scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Styling the book image with a hover zoom effect */
 .book img {
-  width: 300x;  /* Set a fixed width */
-  height: 250px; /* Set a fixed height to maintain consistency */
-  object-fit: cover; /* Ensures the image fills the area without distortion */
-  display: block;
-  margin-bottom: 0.5rem;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 0.75rem;
+  transition: transform 0.3s ease;
+}
+.book img:hover {
+  transform: scale(1.1);
 }
 
-/* Keyframes for fade in from below */
-@keyframes fadeInUp {
+/* Optional title and author text styling within each book */
+.book .title {
+  font-family: 'EB Garamond', serif;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+.book .author {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Keyframes for fading in the main container */
+@keyframes containerFadeIn {
   from {
     opacity: 0;
     transform: translateY(20px);
@@ -283,6 +403,19 @@
     transform: translateY(0);
   }
 }
+
+/* Keyframes for each book’s entrance animation */
+@keyframes bookAppear {
+  from {
+    opacity: 0;
+    transform: translateY(20px) rotateX(15deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotateX(0);
+  }
+}
+
 
 /* Quote container – centers quotes on the page */
 .quoteContainer {

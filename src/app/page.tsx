@@ -15,13 +15,15 @@ export default function Page() {
         <title> Ivan Loves Quotes</title>
       </head>
       <body className={styles.body}>
+      <div className="coverImage">
         <Image
           src="/meart-web.png"
           alt="Cover Image"
-          width={400}
-          height={400}
-          />
-      <h1 className={styles.typingeffect}>
+          width={300}
+          height={300}
+        />
+      </div>
+      <h1 className={styles.title}>
         Happy {currentDate} !
       </h1>
       <h4 className={styles.slide}>
