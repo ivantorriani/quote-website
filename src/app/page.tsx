@@ -30,7 +30,7 @@ export default function Page() {
 
       <div className={styles.booksContainer}>
       <h4 className={styles.slide}>
-        What I'm currently reading:
+        What I am currently reading:
       </h4>
         <div className={styles.booksBar}>
           {BookSchema.map((book, index) => (
