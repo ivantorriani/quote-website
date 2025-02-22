@@ -12,6 +12,13 @@ const QuoteSchema = [
     "author": "Antoine de Saint-Expury",
     "quote": '"We do not record flowers," said the geographer. "Why is that? The flower is the most beautiful thing on my planet!". "We do not record them, " said the geographer, "because they are ephermeral."',
     "analysis": "The geographer is not concerned with the rose because he is only concerned of 'matters of consequence' - things that are pragmatic. The Little Prince loves the rose because he thinks its beautiful, not because it serves a purpose. We should love things not because they serve a purpose, but because we love it; don't be too realistic. My favorite quote of all time, 'L'art pour l'art' (art for art's sake), is the same idea: do things for their own sake", 
+  },
+  {
+    "portrait": '/author-headshots/milankundera.jpg',
+    "bookname": "The Unbearable Lightness of Being",
+    "author": "Milan Kundera",
+    "quote": "But because they deal with something that will not return, the bloody years of the revolution have turned into mere words, theories, and discussions, have become lighter than feathers, frightening no one",
+    "analysis": "Honestly this book was so weird, but this quote was really important. The idea of eternal-return is that any event, like mistakes throughout history, will happen again and again if not acknowledged. The lesson is to take special attention to mistakes, because they repeat themselves if not corrected.",
   }
 
 ];
