@@ -1,22 +1,18 @@
 const QuoteSchema = [
-    { "quote": " ...But because they deal with something that will not return, the bloody years of the revolution have turned into mere words, theories, and discussions, have become lighter than feathers, frightening no one.", 
-      "author": "Milan Kundera", 
-      "book": "The Unbearable Lightness of Being" },
-    { "quote": "The stars are beautiful because of a flower that cannot be seen", 
-       "author": "Antoine de Saint-Exupéry", 
-       "book": "The Little Prince" },
-    { "quote": "But it will be like an old abondoned shell. There's nothing sad about old shells",
-      "author": "Antoine de Saint-Exupéry",
-        "book": "The Little Prince" },
-    { "quote": "If someone loves a flower, of which just one single blossom grows in all the millions and millions of stars, is it enough to make him happy just to look at the  stars?",
-       "author": "Antoine de Saint-Exupéry",
-       "book": "The Little Prince" },
-    { "quote": "The war is just when the intention that causes it to be undertaken is just. The will is therefore the principle element that must be considered, not the means ... He who intends to kill the guilty sometimes faultlessly shed the blood of the innocents.",
-      "author": "Henry Kissinger",
-      "book": "Diplomacy" },
-    { "quote": "So all that the old dukes had been without knowing it, this duke would fain know he was without being it.",
-       "author": "Dwight Moody",
-        "book": "unknown" },
+  { 
+    "portrait": '/author-headshots/henrykissinger.png',
+    "bookname": "Diplomacy",
+    "author": "Henry Kissinger",
+    "quote": "Statesmen, even warriors, focus on the world in which they live; to prophets, the real world is the one they want to bring into being",
+    "analysis": "Teddy Roosevelt, the statesmen, justified American intervention by practical realities: excersise power in the nation's best interest. Woodrow Wilson, the prophet, justified intervention with moral principles: excersize power to uphold American ideals. Both idealistic and realistic diplomacy have their merits, and as with most problems, the best solution is somewhere in the middle. Roosevelt is still my favorite president though.", 
+  },
+  {
+    "portrait": '/author-headshots/antoinede.jpg',
+    "bookname": "The Little Prince",
+    "author": "Antoine de Saint-Expury",
+    "quote": '"We do not record flowers," said the geographer. "Why is that? The flower is the most beautiful thing on my planet!". "We do not record them, " said the geographer, "because they are ephermeral."',
+    "analysis": "The geographer is not concerned with the rose because he is only concerned of 'matters of consequence' - things that are pragmatic. The Little Prince loves the rose because he thinks its beautiful, not because it serves a purpose. We should love things not because they serve a purpose, but because we love it; don't be too realistic. My favorite quote of all time, 'L'art pour l'art' (art for art's sake), is the same idea: do things for their own sake", 
+  }
 
 ];
 
