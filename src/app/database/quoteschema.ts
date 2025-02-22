@@ -19,6 +19,13 @@ const QuoteSchema = [
     "author": "Milan Kundera",
     "quote": "But because they deal with something that will not return, the bloody years of the revolution have turned into mere words, theories, and discussions, have become lighter than feathers, frightening no one",
     "analysis": "Honestly this book was so weird, but this quote was really important. The idea of eternal-return is that any event, like mistakes throughout history, will happen again and again if not acknowledged. The lesson is to take special attention to mistakes, because they repeat themselves if not corrected.",
+  },
+  {
+    "portrait": '/author-headshots/dwightmoody.jpg',
+    "bookname": "unknown",
+    "author": "Dwight Moody",
+    "quote": "So all that the old dukes had been without knowing it, this duke would fain know he was without being it.",
+    "analysis": "The old dukes had respect, power, and leadership without constantly projecting it. The new dukes act like they have respect, power, and leadership for everyone to see, but they don't actually have it. Be like the old dukes: try to actually be great instead of trying to seem like it."
   }
 
 ];
