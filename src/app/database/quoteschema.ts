@@ -26,6 +26,13 @@ const QuoteSchema = [
     "author": "Dwight Moody",
     "quote": "So all that the old dukes had been without knowing it, this duke would fain know he was without being it.",
     "analysis": "The old dukes had respect, power, and leadership without constantly projecting it. The new dukes act like they have respect, power, and leadership for everyone to see, but they don't actually have it. Be like the old dukes: try to actually be great instead of trying to seem like it."
+  },
+  {
+    "portrait": '/author-headshots/sail.jpg',
+    "bookname": "The Old Man and the Sea",
+    "author": "Ernest Hemingway",
+    "quote": '"Why was I not born with two good hands? he thought. Perhaps it was my fault for not training that one properly. But God knows he had enough chances to learn.',
+    "analysis": "The Old Man complains that his left arm is weak, and it let him down when trying to catch the fish. But he knew that he was given enough chances to train and still didn't. Try and fix your weaknesses as soon as they become apparent so it doesn't let you down when you need it. Regret sucks because it was in your control."
   }
 
 ];
