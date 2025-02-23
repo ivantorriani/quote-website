@@ -28,7 +28,7 @@ const QuoteSchema = [
     "analysis": "The old dukes had respect, power, and leadership without constantly projecting it. The new dukes act like they have respect, power, and leadership for everyone to see, but they don't actually have it. Be like the old dukes: try to actually be great instead of trying to seem like it."
   },
   {
-    "portrait": '/author-headshots/sail.jpg',
+    "portrait": '/author-headshots/ernesthemingsway.jpg',
     "bookname": "The Old Man and the Sea",
     "author": "Ernest Hemingway",
     "quote": '"Why was I not born with two good hands? he thought. Perhaps it was my fault for not training that one properly. But God knows he had enough chances to learn.',
