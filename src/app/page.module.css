@@ -51,7 +51,7 @@
   position: relative;
   
   /* Apply a glossy, gradient fill to the text */
-  background: linear-gradient(135deg, #fefefe, black 70%);
+  background: linear-gradient(135deg, #fefefe, rgb(241, 235, 235) 70%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
