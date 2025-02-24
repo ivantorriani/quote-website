@@ -46,7 +46,7 @@ export default function Page() {
 
 
 
-      //** Quote Showcase */ 
+
       <div className={styles.quotetitle}>
         <h4> One quote I liked today </h4>
       </div>
