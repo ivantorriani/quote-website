@@ -47,9 +47,9 @@ export default function Page() {
         <h4> One quote I liked today </h4>
       </div>
       <div className = {styles.quoteContainer}>
-          <p className = {styles.quotetheday}> Imagine if each day a man must try to kill the moon, he thought. The moon runs away. But imagine if a man each day should have to try to kill the sun? We were born lucky, he thought</p>
+          <p className = {styles.quotetheday}> You did not kill the fish only to keep alive and to sell for food, he thought. You killed him for pride and because you are a fisherman. You loved him when he was alive and you loved him after.</p>
           <p className = {styles.author}>  Santiago (The Old Man), The Old Man and the Sea, Ernest Hemingway</p>
-          <p className = {styles.description}> Santiago has not caught a fish in years. But he remembers that, unlike killing the moon or the sun, his goal to catch a fish is achievable. We should be grateful that most of our problems are within our control.</p>
+          <p className = {styles.description}> Santiago, because he has not caught a fish in years, is called salao by the local fishermen. Out at sea, Santiago finally catches the biggest marlin the town has ever seen and ties it to the side of his skiff. But, on the way back to the town, sharks attack the fish until only a unrecognizable carcass that no one would appreciate remains. For a while of even refusing to even look at the fish out of shame,  Santiago remembers that he fished because he was a fisherman; not for praise or appreciation, but because he loved to do it. He realizes that he loved the fish because he fought for it and caught it, not for what people in town would think of it. </p>
       </div>
       <div className = {styles.slide2}>
         <p>Interested in more quotes? Check out </p> <Link href="/quote-archive"> the quote archive </Link> 
