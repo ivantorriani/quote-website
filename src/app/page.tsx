@@ -15,17 +15,17 @@ export default function Page() {
         <title> Ivan Loves Quotes</title>
       </head>
       <body className={styles.body}>
-      <div className="coverImage">
-        <Image
-          src="/meart-web.png"
-          alt="Cover Image"
-          width={300}
-          height={300}
-        />
-      </div>
-      <h1 className={styles.title}>
-        Happy {currentDate} !
-      </h1>
+      <div className={styles.header}>
+  <video className={styles.bgVideo} autoPlay loop muted playsInline>
+    <source src="video.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+  <h1 className={styles.title}>
+    Happy {currentDate} !
+  </h1>
+</div>
+
+
 
 
       <div className={styles.booksContainer}>
