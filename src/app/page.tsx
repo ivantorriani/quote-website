@@ -16,13 +16,10 @@ export default function Page() {
       </head>
       <body className={styles.body}>
       <div className={styles.header}>
-  <video className={styles.bgVideo} autoPlay loop muted playsInline>
-    <source src="video.mp4" type="video/mp4" />
-    Your browser does not support the video tag.
-  </video>
   <h1 className={styles.title}>
     Happy {currentDate} !
   </h1>
+  <p className = {styles.welcomeMessage}> Hey, I'm Ivan! Welcome to my page </p>
 </div>
 
 
