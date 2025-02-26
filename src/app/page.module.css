@@ -408,12 +408,28 @@
 
 /* Quote container – centers quotes on the page */
 .quoteContainer {
+  position: relative; /* For absolute positioning of the video */
   outline: 2px solid #000;
   margin-top: 0em;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center; /* Centers content vertically */
   padding: 20px;
+  min-height: 100vh; /* Ensures container covers full viewport height */
+  overflow: hidden; /* Hides any overflow from the video */
+}
+
+/* Background Video Styling */
+.quoteContainer video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover; /* Fills container without distortion */
+  transform: translate(-50%, -50%);
+  z-index: -1; /* Places video behind text */
 }
 
 /* Each individual quote block */
@@ -445,6 +461,7 @@
 .quotetheday:hover {
   filter: brightness(1.2);
 }
+
 .quotetheday::before {
   content: "“";
   margin-right: 0.2em;
