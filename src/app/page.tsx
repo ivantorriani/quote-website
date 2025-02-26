@@ -19,6 +19,7 @@ export default function Page() {
   <h1 className={styles.title}>
     Happy {currentDate} !
   </h1>
+  {/* eslint-disable-next-line quotes */}
   <p className = {styles.welcomeMessage}> Hey, I'm Ivan! Welcome to my page </p>
 </div>
 
