@@ -136,7 +136,7 @@
   margin: 40px auto;
   max-width: 600px;
   font-size: 1.0rem;
-  color: #666;
+  color: #ffffff;
 
   font-weight: 400;
   line-height: 1.4;
@@ -377,7 +377,7 @@
 .book p {
   font-family: 'Roboto Mono', monospace;
   font-size: 1rem;
-  color: #666;
+  color: #fff9f9;
   margin: 0;
 }
 
@@ -438,6 +438,7 @@
   margin: 40px auto;
   max-width: 600px;
   font-size: 2.5rem;
+  color: white;
   font-weight: 400;
   line-height: 1.4;
   font-family: 'Roboto Mono', monospace;  /* Boxy, monospaced look */
@@ -447,9 +448,10 @@
   display: inline-block;
   opacity: 0;
   animation: fadeIn 0.6s ease-out forwards;
+
   
   /* Set up a gradient background that’s clipped to the text */
-  background: linear-gradient(90deg, #333 20%, #fff 50%, #333 80%);
+  background: linear-gradient(90deg, #ffffff 20%, #fff 50%, #ffffff 80%);
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -487,7 +489,7 @@
   margin-top: 20px;
   font-size: 1.2rem; /* Smaller than .quotetheday */
   font-family: 'Roboto Mono', monospace; /* Consistent, boxy style */
-  color: #666;
+  color: #ffffff;
   letter-spacing: 0.05em;
   opacity: 0;
   animation: fadeIn 0.6s ease-out forwards 0.3s; /* Slight delay for a staggered effect */
