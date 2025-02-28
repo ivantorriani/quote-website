@@ -33,6 +33,13 @@ const QuoteSchema = [
     "author": "Ernest Hemingway",
     "quote": '"Why was I not born with two good hands? he thought. Perhaps it was my fault for not training that one properly. But God knows he had enough chances to learn.',
     "analysis": "The Old Man complains that his left arm is weak, and it let him down when trying to catch the fish. But he knew that he was given enough chances to train and still didn't. Try and fix your weaknesses as soon as they become apparent so it doesn't let you down when you need it. Regret sucks because it was in your control."
+  },
+  {
+    "portrait": '/author-headshots/kissinger2.jpg',
+    "bookname": "Diplomacy",
+    "author": "Henry Kissinger",
+    "quote": "America found that it would have to implement its ideals in a world less blessed than its own and in concert with states possessed of narrower margins of survival, more limited objectives, and far less self-confidence. And yet America has perserered. The postwar world became largely America's creation, so that, in the end, it did not come to play the role Wilson had envisioned for it - as a beacon to follow, and a hope to maintain.",
+    "analysis": "Wilson's idealistic vision of spreading American exceptionalism has become an diplomatic staple. But, just like how his League of Nations fell, most countries will refuse to adopt American morals as their way of life. When Germany, Italy, and Japan began to rise as major threats to world peace, the League of Nation's strong moral convictions were naturally not convincing enough to prevent World War II. Wilson had good intentions, to prioritize personal freedom and democracy, but to be an effective diplomatic leader there should be practical force and strong boundaries."
   }
 
 ];
