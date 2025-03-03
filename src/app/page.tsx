@@ -3,10 +3,7 @@ import BookSchema from './database/bookschema';
 //import QuoteSchema from './database/quoteschema';
 import Image from 'next/image';
 import Link from 'next/link';
-import { format } from "date-fns";
 
-console.log(format(new Date(), "yyyy-MM-dd HH:mm:ss")); // 2025-02-14 12:34:56
-const currentDate = format(new Date(), "MMMM dd ");
 
 export default function Page() {
   return (
