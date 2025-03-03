@@ -46,7 +46,7 @@ export default function Page() {
 
 
       <div className={styles.quotetitle}>
-        <h4> One quote I liked today </h4>
+        <h4> Quote of the Day </h4>
       </div>
       <div className={styles.quoteContainer}>
   <video className={styles.quoteVideo} autoPlay loop muted>
@@ -66,9 +66,7 @@ export default function Page() {
 <div className={styles.slide2}>
   <p>Interested in more quotes? Check out </p> <Link href="/quote-archive"> the quote archive </Link>
 </div>
-<div className={styles.slide2}>
-  <p> Interested in more books? Check out </p> <Link href="/book-archive"> the book archive </Link>
-</div>
+
       <Image
 
         src="/endpic.png"
