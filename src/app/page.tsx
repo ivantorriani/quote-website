@@ -17,9 +17,9 @@ export default function Page() {
       <body className={styles.body}>
       <div className={styles.header}>
   <h1 className={styles.title}>
-    Happy {currentDate} !
+  Hey, Im Ivan!
   </h1>
-  <p className = {styles.welcomeMessage}> Hey, Im Ivan! Welcome to my page </p>
+  <p className = {styles.welcomeMessage}> Welcome to my page </p>
 </div>
 
 
