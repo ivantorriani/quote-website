@@ -54,13 +54,13 @@ export default function Page() {
     Your browser does not support the video tag.
   </video>
   <p className={styles.quotetheday}>
-    You did not kill the fish only to keep alive and to sell for food, he thought. You killed him for pride and because you are a fisherman. You loved him when he was alive and you loved him after.
+    In the dark it was like summer lightning, but the nights were cool and there was not the feeling of a storm coming.
   </p>
   <p className={styles.author}>
-    Santiago (The Old Man), The Old Man and the Sea, Ernest Hemingway
+    idk , Farewell to Arms, Ernest Hemingway
   </p>
   <p className={styles.description}>
-    Santiago, because he has not caught a fish in years, is called salao by the local fishermen. Out at sea, Santiago finally catches the biggest marlin the town would have ever seen and ties it to the side of his skiff. But, on the way back to the town, sharks attack the fish until only an unrecognizable carcass that no one would appreciate remains. For a while of even refusing to even look at the fish out of shame, Santiago remembers that he fished because he was a fisherman; not for praise or appreciation, but because he loved to do it. He realizes that he loved the fish because he fought for it and caught it, not for what people in town would think of it.
+    
   </p>
 </div>
 <div className={styles.slide2}>
