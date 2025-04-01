@@ -66,7 +66,9 @@ export default function Page() {
 <div className={styles.slide2}>
   <p>Interested in more quotes? Check out </p> <Link href="/quote-archive"> the quote archive </Link>
 </div>
-
+<div className = {styles.slide2}>
+  <p> Check out my competitve programming journey blog! </p> <Link href="https://github.com/ivantorriani/codeforce-blog"> Codeforce Blog </Link>
+</div>
       <Image
 
         src="/endpic.png"
